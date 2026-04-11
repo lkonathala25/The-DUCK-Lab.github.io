@@ -1,0 +1,1 @@
+{"version":3,"sourceRoot":"","sources":["container.scss"],"names":[],"mappings":"AAAA;EACE;EACA;EACA;;;AAGF;EACE;IACE","sourcesContent":[".container {\n  max-width: 1280px;\n  margin: 0 auto;\n  padding: 0 48px;\n}\n\n@media (max-width: 900px) {\n  .container {\n    padding: 0 24px;\n  }\n}\n"],"file":"container.css"}

@@ -1,0 +1,68 @@
+[data-dark=false] {
+  --bg: #fbf6ed;
+  --bg-alt: #f4ead4;
+  --surface: #ffffff;
+  --ink: #1a1d3a;
+  --ink-soft: #4c5175;
+  --ink-mute: #7a7f9e;
+  --primary: #1e2a5e;
+  --primary-dark: #0f1635;
+  --accent: #e85d3e;
+  --accent-soft: #fcd9c8;
+  --secondary: #f5b700;
+  --border: #ebe0c3;
+  --background: var(--bg);
+  --background-alt: var(--bg-alt);
+  --text: var(--ink);
+  --light-gray: var(--border);
+  --gray: var(--ink-mute);
+  --dark-gray: var(--ink-soft);
+  --overlay: #1a1d3a12;
+}
+
+[data-dark=true] {
+  --bg: #fbf6ed;
+  --bg-alt: #f4ead4;
+  --surface: #ffffff;
+  --ink: #1a1d3a;
+  --ink-soft: #4c5175;
+  --ink-mute: #7a7f9e;
+  --primary: #1e2a5e;
+  --primary-dark: #0f1635;
+  --accent: #e85d3e;
+  --accent-soft: #fcd9c8;
+  --secondary: #f5b700;
+  --border: #ebe0c3;
+  --background: var(--bg);
+  --background-alt: var(--bg-alt);
+  --text: var(--ink);
+  --light-gray: var(--border);
+  --gray: var(--ink-mute);
+  --dark-gray: var(--ink-soft);
+  --overlay: #1a1d3a12;
+}
+
+:root {
+  --serif: "Instrument Serif", serif;
+  --sans: "Inter", sans-serif;
+  --title: "Instrument Serif", serif;
+  --heading: "Instrument Serif", serif;
+  --body: "Inter", sans-serif;
+  --code: "Roboto Mono", monospace;
+  --large: 1.2rem;
+  --xl: 1.4rem;
+  --xxl: 1.6rem;
+  --thin: 400;
+  --regular: 400;
+  --semi-bold: 500;
+  --bold: 600;
+  --black: 700;
+  --spacing: 1.65;
+  --compact: 1.45;
+  --rounded: 6px;
+  --shadow: 0 10px 40px -12px rgba(26, 29, 58, 0.25);
+  --shadow-lg: 0 40px 80px -30px rgba(26, 29, 58, 0.35);
+  --transition: 0.3s ease;
+}
+
+/*# sourceMappingURL=-theme.css.map */

@@ -1,0 +1,73 @@
+footer {
+  background: var(--ink);
+  color: #d8d9e5;
+  padding: 80px 0 48px;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: #ffffff;
+}
+
+.footer-brand .logo-mark {
+  width: 46px;
+  height: 46px;
+  --logo-frame: #ffffff;
+  --logo-duck: var(--secondary);
+  --logo-bill: var(--accent);
+}
+
+.footer-brand span {
+  font-family: var(--serif);
+  font-size: 1.7rem;
+  line-height: 1;
+}
+
+.footer-brand em {
+  color: var(--accent);
+  font-style: italic;
+}
+
+.footer-social {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.footer-social a,
+.footer-social .button {
+  color: #d8d9e5 !important;
+  font-size: 1.35rem;
+  transition: color var(--transition), transform var(--transition);
+}
+
+.footer-social a:hover,
+.footer-social .button:hover {
+  color: var(--accent) !important;
+  transform: translateY(-2px);
+}
+
+.footer-note {
+  font-size: 0.82rem;
+  opacity: 0.55;
+  letter-spacing: 0.02em;
+}
+
+@media (max-width: 700px) {
+  .footer-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/*# sourceMappingURL=footer.css.map */

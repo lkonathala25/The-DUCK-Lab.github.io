@@ -1,0 +1,1 @@
+{"version":3,"sourceRoot":"","sources":["logo-mark.scss"],"names":[],"mappings":"AAAA;EACE;EACA;EACA;EACA;EACA;;;AAGF;EACE","sourcesContent":[".logo-mark {\n  --logo-frame: var(--primary);\n  --logo-duck: var(--secondary);\n  --logo-bill: var(--accent);\n  display: block;\n  flex-shrink: 0;\n}\n\n.logo-mark.on-dark {\n  --logo-frame: #ffffff;\n}\n"],"file":"logo-mark.css"}
