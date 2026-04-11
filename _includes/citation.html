@@ -21,53 +21,6 @@
       >
 
 
-      {% comment %} Split the image string by comma to check for multiple images {% endcomment %}
-      {% comment %}
-{% assign citation_images = citation.image | split: "," %}
-
-<a
-  {% if citation.link %}
-    href="{{ citation.link | relative_url | uri_escape }}"
-  {% endif %}
-  class="citation-image"
-  aria-label="{{ citation.title | default: "citation link" | regex_strip }}"
-  style="margin-left: 15px; {% if citation_images.size > 1 %}width: 250px;{% endif %}"
->
-
-  {% if citation_images.size > 1 %}
-    <div style="display: flex; gap: 5px; height: 100%;">
-      {% for img in citation_images %}
-        <img
-          src="{{ img | strip | relative_url | uri_escape }}"
-          alt="{{ citation.title }}"
-          loading="lazy"
-          style="width: 50%; object-fit: cover; height: auto;"
-          {% include fallback.html %}
-        >
-      {% endfor %}
-    </div>
-
-  {% else %}
-    <img
-      src="{{ citation.image | relative_url | uri_escape }}"
-      alt="{{ citation.title | default: "citation image" | regex_strip }}"
-      loading="lazy"
-      {% include fallback.html %}
-    >
-  {% endif %}
-</a>
-      {% endcomment %}
-
-
-                  {% comment %}
-      <img
-          src="/images/research/{{ citation.image | split: '/' | last }}"
-          alt="{{ citation.title | default: "citation image" }}"
-          loading="lazy"
-          style="max-width: 100%; height: auto;"
-          onerror="this.style.display='none'"
-        >
-            {% endcomment %}
         <img
           src="{{ citation.image | relative_url | uri_escape }}"
           alt="{{ citation.title | default: "citation image" | regex_strip }}"
