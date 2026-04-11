@@ -1,6 +1,6 @@
 ---
 name: Joshua Ong 
-image: images/photo.jpg
+image: images/joshua.webp
 role: phd
 description: PhD Student
 homepage:  
