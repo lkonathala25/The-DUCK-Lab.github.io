@@ -1,4 +1,8 @@
 ---
+title: Home
+nav:
+  order: 0
+  tooltip: Home
 ---
 
 <div style="display: flex; flex-wrap: wrap; gap: 40px; align-items: center; margin-bottom: 60px;">
