@@ -48,17 +48,17 @@
 <link rel="icon" href="/images/icon.png">
 
 <meta name="title" content="Not found">
-<meta name="description" content="description of  lab">
+<meta name="description" content="Data, Uncertainty, Constraints, Knowledge. The DUCK Lab at Imperial College London builds AI systems that don't just learn from data, but reason over it — combining machine learning with structured knowledge, constraints, and calibrated uncertainty.">
 
 <meta property="og:title" content="Not found">
 <meta property="og:site_title" content="DUCK LAB">
-<meta property="og:description" content="description of  lab">
+<meta property="og:description" content="Data, Uncertainty, Constraints, Knowledge. The DUCK Lab at Imperial College London builds AI systems that don't just learn from data, but reason over it — combining machine learning with structured knowledge, constraints, and calibrated uncertainty.">
 <meta property="og:url" content="https://the-duck-lab.github.io">
 <meta property="og:image" content="/images/share.jpg">
 <meta property="og:locale" content="en_US">
 
 <meta property="twitter:title" content="Not found">
-<meta property="twitter:description" content="description of  lab">
+<meta property="twitter:description" content="Data, Uncertainty, Constraints, Knowledge. The DUCK Lab at Imperial College London builds AI systems that don't just learn from data, but reason over it — combining machine learning with structured knowledge, constraints, and calibrated uncertainty.">
 <meta property="twitter:url" content="https://the-duck-lab.github.io">
 <meta property="twitter:card" content="summary_large_image">
 <meta property="twitter:image" content="/images/share.jpg">
@@ -74,7 +74,7 @@
       "@type": "WebSite",
     
     "name": "Not found",
-    "description": "description of  lab",
+    "description": "Data, Uncertainty, Constraints, Knowledge. The DUCK Lab at Imperial College London builds AI systems that don&apos;t just learn from data, but reason over it — combining machine learning with structured knowledge, constraints, and calibrated uncertainty.",
     "headline": "Not found",
     "publisher": {
       "@type": "Organization",
@@ -323,10 +323,10 @@
 
 
 
-  <!-- third party scripts -->
-<script src="https://unpkg.com/@popperjs/core@2" defer></script>
-<script src="https://unpkg.com/tippy.js@6" defer></script>
-<script src="https://unpkg.com/mark.js@8" defer></script>
+  <!-- third party scripts (pinned to exact versions for reproducibility) -->
+<script src="https://unpkg.com/@popperjs/core@2.11.8/dist/umd/popper.min.js" defer></script>
+<script src="https://unpkg.com/tippy.js@6.3.7/dist/tippy-bundle.umd.min.js" defer></script>
+<script src="https://unpkg.com/mark.js@8.11.1/dist/mark.min.js" defer></script>
 
 <!-- include all js in scripts folder -->
 
@@ -397,13 +397,39 @@
 </header>
 
     <main>
-      <section>
+      <section class="not-found-section">
   <div class="container">
     <div class="not-found">
-      <div class="not-found-code">404</div>
-      <h1 class="not-found-title">Page <em>not found</em>
+      <div class="not-found-code" aria-label="404">
+        <span class="nf-digit nf-4">4</span><span class="nf-digit nf-0">0</span><span class="nf-digit nf-4-b">4</span>
+      </div>
+
+      <h1 class="not-found-title">The duck has <em>wandered off</em>
 </h1>
-      <p class="not-found-desc">The page you're looking for has wandered off. It may have moved, been renamed, or never existed at all.</p>
+
+      <p class="not-found-desc">
+        Our routing couldn't find this page. It may have moved, been renamed, or never existed at all — the four pillars all have a theory.
+      </p>
+
+      <div class="nf-diagnostic" aria-label="Diagnostic report from the DUCK pillars">
+        <div class="nf-diag-item nf-leg-d">
+          <b>Data</b>
+          <span>No record of this URL in the corpus.</span>
+        </div>
+        <div class="nf-diag-item nf-leg-u">
+          <b>Uncertainty</b>
+          <span>Confidence it exists: <em>0%</em>.</span>
+        </div>
+        <div class="nf-diag-item nf-leg-c">
+          <b>Constraints</b>
+          <span>This path violates our routing rules.</span>
+        </div>
+        <div class="nf-diag-item nf-leg-k">
+          <b>Knowledge</b>
+          <span>Not found in our knowledge graph.</span>
+        </div>
+      </div>
+
       <div class="cta-row">
         <a href="/" class="btn btn-primary">Back to home</a>
         <a href="/research/" class="btn btn-ghost">Browse research →</a>
