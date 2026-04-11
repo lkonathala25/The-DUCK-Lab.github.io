@@ -7,9 +7,10 @@ description: "Assistant Professor<br>Principal Investigator of DUCK LAB"
 homepage:  
 links:
   email:  
-  twitter: 
+  twitter: e_giunchiglia
   github:  
-  x: 
+  x: e_giunchiglia
+  linkedin: eleonora-giunchiglia-3063b5164
   home-page: 
   orcid: 0000-0001-9313-753X
 ---
