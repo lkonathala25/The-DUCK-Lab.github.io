@@ -1,6 +1,6 @@
 ---
 name: Lohith Konathala
-image: images/photo.jpg
+image: images/lohith.jpeg
 role: phd
 description: PhD Student
 homepage:  
