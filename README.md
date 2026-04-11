@@ -5,6 +5,6 @@
 
   # duck-AI-lab's Website
 
-  Visit **[duck-ai-lab.github.io](https://duck-ai-lab.github.io)** 🚀
+  Visit **[the-duck-lab.github.io](https://the-duck-lab.github.io)** 🚀
 
   _Built with [Lab Website Template](https://greene-lab.gitbook.io/lab-website-template-docs)_
