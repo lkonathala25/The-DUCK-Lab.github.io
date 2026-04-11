@@ -13,7 +13,4 @@ links:
   orcid: 0000-0001-9313-753X
 ---
 
- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Faucibus purus in massa tempor nec feugiat nisl pretium fusce.
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Faucibus purus in massa tempor nec feugiat nisl pretium fusce. 
- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Faucibus purus in massa tempor nec feugiat nisl pretium fusce.
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Faucibus purus in massa tempor nec feugiat nisl pretium fusce. 
+Joshua is a first-year PhD student at Imperial College London and a visiting researcher at the University of Edinburgh and Mohamed bin Zayed University of Artificial Intelligence (MBZUAI). Prior to his PhD, he published several papers at top-tier conferences, including ACL, EMNLP, NAACL, and ICLR. His research interests lie within LLM Reasoning, with a particular emphasis on theorem proving to improve the faithfulness and verifiability of LLM outputs. He is currently working at the intersection of diffusion models and theorem proving.
