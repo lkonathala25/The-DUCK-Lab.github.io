@@ -13,7 +13,4 @@ links:
   home-page: https://mihaela-stoian.github.io/
 ---
 
- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Faucibus purus in massa tempor nec feugiat nisl pretium fusce.
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Faucibus purus in massa tempor nec feugiat nisl pretium fusce. 
- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Faucibus purus in massa tempor nec feugiat nisl pretium fusce.
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Faucibus purus in massa tempor nec feugiat nisl pretium fusce. 
+Mihaela Cătălina Stoian is a postdoctoral researcher at Imperial College London working on constraining LLMs for theorem proving. She recently completed her PhD at the University of Oxford, where her work focused on developing neuro-symbolic methods that integrate background knowledge constraints into neural networks for real-world applications. Her contributions to the field have been recognised with several awards, including the Oxford PhD Runner-up Prize awarded by G-Research. Previously, she worked on detecting reflective symmetries in 3D models at Five AI and completed her Master's in speech-to-text machine translation at the University of Edinburgh.
