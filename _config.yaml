@@ -9,11 +9,11 @@ proofer: false
 
 # REPO SETTINGS
 # crucial: this must match "Org/Repo" exactly
-repository: duck-AI-lab/duck-AI-lab.github.io
+repository: The-DUCK-Lab/The-DUCK-Lab.github.io
 
 # URL SETTINGS
 # crucial: baseurl must be empty quotes "" for an organisation root site
-url: "https://duck-AI-lab.github.io"
+url: "https://the-duck-lab.github.io"
 baseurl: ""
 
 # site social media and other links

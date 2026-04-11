@@ -1,0 +1,14 @@
+---
+---
+
+.logo-mark {
+  --logo-frame: var(--primary);
+  --logo-duck: var(--secondary);
+  --logo-bill: var(--accent);
+  display: block;
+  flex-shrink: 0;
+}
+
+.logo-mark.on-dark {
+  --logo-frame: #ffffff;
+}

@@ -1,51 +1,43 @@
 ---
-layout: default
+layout: home
 ---
 
-{% capture floatcontent %}
+<section>
+  <div class="container">
+    <div class="member-page">
+      <aside class="member-page-photo">
+        {% if page.image %}
+          <img src="{{ page.image | relative_url | uri_escape }}" alt="{{ page.name | default: page.title | strip_html }}">
+        {% endif %}
 
-{% include portrait.html lookup=page.slug %}
+        <div class="member-page-links">
+          {% for link in page.links %}
+            {% assign key = link[0] %}
+            {% assign value = link[1] %}
+            {% if value and value != "" %}
+              {% include button.html type=key link=value style="bare" %}
+            {% endif %}
+          {% endfor %}
+        </div>
+      </aside>
 
-<div>
-  {% for link in page.links %}
-    {% assign key = link[0] %}
-    {% assign value = link[1] %}
-    {% include button.html type=key link=value style="bare" %}<br>
-  {% endfor %}
-</div>
+      <div class="member-page-body">
+        <div class="member-page-role">{{ page.description | default: "Member" }}</div>
+        <h1 class="member-page-name">
+          {% assign parts = page.name | default: page.title | strip_html | split: " " %}
+          {% if parts.size >= 2 %}
+            <em>{{ parts[0] }}</em><br>{% for part in parts offset: 1 %}{{ part }} {% endfor %}
+          {% else %}
+            {{ page.name | default: page.title }}
+          {% endif %}
+        </h1>
 
-{% endcapture %}
+        <div class="member-page-bio">
+          {{ content }}
+        </div>
 
-{% include float.html content=floatcontent %}
-
-{{ content }}
-
-{% assign aliases = page.aliases
-  | default: page.name
-  | default: page.title
-  | join: ","
-  | split: ","
-  | array_filter
-%}
-
-<!--{% capture search -%}-->
-<!--  research/?search={% for alias in aliases %}"{{ alias }}" {% endfor %}-->
-<!--{%- endcapture %}-->
-
-<!--<p class="center">-->
-<!--  <a href="{{ search | relative_url | uri_escape }}">-->
-<!--    Search for {{ page.name | default: page.title }}'s papers on the Research page-->
-<!--  </a>-->
-<!--</p>-->
-
-<!--{% capture search -%}-->
-<!--  blog/?search={{ page.name }}-->
-<!--{%- endcapture %}-->
-
-<!--
-<p class="center">
-  <a href="{{ search | relative_url | uri_escape }}">
-    See {{ page.name | default: page.title }}'s posts on the Blog page
-  </a>
-</p>
--->
+        <a href="{{ '/team/' | relative_url }}" class="btn btn-ghost">← Back to team</a>
+      </div>
+    </div>
+  </div>
+</section>

@@ -2,6 +2,7 @@
 name: Joshua Ong 
 image: images/joshua.webp
 role: phd
+order: 50
 description: PhD Student
 homepage:  
 links:

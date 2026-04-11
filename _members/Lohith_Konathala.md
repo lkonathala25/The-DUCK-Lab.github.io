@@ -2,6 +2,7 @@
 name: Lohith Konathala
 image: images/lohith.jpeg
 role: phd
+order: 40
 description: PhD Student
 homepage:  
 links:

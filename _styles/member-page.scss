@@ -1,0 +1,91 @@
+---
+---
+
+.member-page {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 64px;
+  align-items: start;
+}
+
+.member-page-photo img {
+  width: 100%;
+  aspect-ratio: 4/5;
+  object-fit: cover;
+  border-radius: 6px;
+  box-shadow: var(--shadow-lg);
+}
+
+.member-page-links {
+  display: flex;
+  gap: 14px;
+  margin-top: 24px;
+  font-size: 1.2rem;
+}
+
+.member-page-links a,
+.member-page-links .button {
+  color: var(--ink-soft);
+  transition: color var(--transition), transform var(--transition);
+}
+
+.member-page-links a:hover,
+.member-page-links .button:hover {
+  color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.member-page-role {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 16px;
+}
+
+.member-page-name {
+  font-family: var(--serif);
+  font-size: clamp(3rem, 5vw, 4.6rem);
+  font-weight: 400;
+  color: var(--ink);
+  line-height: 0.95;
+  margin: 0 0 32px 0;
+}
+
+.member-page-name em {
+  color: var(--accent);
+  font-style: italic;
+}
+
+.member-page-bio {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: var(--ink-soft);
+  max-width: 68ch;
+  margin-bottom: 40px;
+}
+
+.member-page-bio p {
+  margin: 0 0 18px 0;
+}
+
+.member-page-bio a {
+  color: var(--accent);
+  border-bottom: 1px solid transparent;
+  transition: border-color var(--transition);
+}
+
+.member-page-bio a:hover {
+  border-bottom-color: var(--accent);
+}
+
+@media (max-width: 900px) {
+  .member-page {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .member-page-photo {
+    max-width: 360px;
+  }
+}

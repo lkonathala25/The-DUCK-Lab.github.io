@@ -1,159 +1,17 @@
-{% comment %} --- LOGIC SECTION --- {% endcomment %}
-{% if include.lookup %}
-  {% assign member = site.members | where_exp: "m", "m.slug == include.lookup" | first %}
-{% elsif include.member %}
-  {% assign member = include.member %}
-{% else %}
-  {% assign member = include %}
-{% endif %}
-
-{% assign type = site.data.types[member.role] %}
-
-{% comment %} --- LINK CALCULATION ---
-  1. Priority: External Homepage
-  2. Fallback: Internal Member URL (only if we aren't currently on that page)
+{% comment %}
+  Thin router: keeps legacy {% include list.html component="member-bio" %} calls
+  working by dispatching to the new PI or card component based on role.
 {% endcomment %}
-{% assign click_url = nil %}
-{% if member.homepage %}
-  {% assign click_url = member.homepage %}
-{% elsif member.url and page.slug != member.slug %}
-  {% assign click_url = member.url | relative_url | uri_escape %}
+{% if include.lookup %}
+  {% assign m = site.members | where_exp: "x", "x.slug == include.lookup" | first %}
+{% elsif include.member %}
+  {% assign m = include.member %}
+{% else %}
+  {% assign m = include %}
 {% endif %}
 
-<div class="member-bio-container">
-
-  <div class="member-profile-card">
-
-    {% comment %} --- IMAGE SECTION --- {% endcomment %}
-    {% if member.image %}
-      {% if click_url %}
-        <a href="{{ click_url }}" aria-label="{{ member.name }}" {% if member.homepage %}target="_blank" rel="noopener noreferrer"{% endif %}>
-      {% endif %}
-
-        <img
-          src="{{ member.image | relative_url | uri_escape }}"
-          alt="{{ member.name }}"
-          class="member-photo"
-        >
-
-      {% if click_url %}
-        </a>
-      {% endif %}
-    {% endif %}
-
-    {% comment %} --- NAME SECTION --- {% endcomment %}
-    {% if member.name %}
-      {% if click_url %}
-        <a href="{{ click_url }}" class="member-link" {% if member.homepage %}target="_blank" rel="noopener noreferrer"{% endif %}>
-      {% endif %}
-
-        <h3 class="member-name">{{ member.name }}</h3>
-
-      {% if click_url %}
-        </a>
-      {% endif %}
-    {% endif %}
-
-    {% if member.role or member.affiliation %}
-      <div class="member-details">
-          <span class="portrait-description">{{ member.description | default: type.description }}</span>
-
-        {% if member.affiliation %}
-          <br><span class="member-org">{{ member.affiliation }}</span>
-        {% endif %}
-      </div>
-    {% endif %}
-  </div>
-
-  <div class="member-biography">
-    {% if member.content %}
-      <p style="text-align: left; line-height: 1.6; margin-top: 0.5rem; color: var(--gray);">
-        {{ member.content | markdownify | remove: "<p>" | remove: "</p>" }}
-      </p>
-    {% elsif member.description %}
-      {{ member.description | markdownify }}
-    {% else %}
-      <p><em>No biography available.</em></p>
-    {% endif %}
-  </div>
-
-</div>
-
-<style>
-  /* Main Flex Container */
-  .member-bio-container {
-    display: flex;
-    gap: 2rem;
-    margin-bottom: 3rem;
-    padding-bottom: 1rem;
-    align-items: flex-start;
-  }
-
-  /* Left Column (Photo & Info) */
-  .member-profile-card {
-    flex: 0 0 220px;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    align-items: center;
-  }
-
-  .member-photo {
-    width: 180px;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 50%;
-    margin-bottom: 1rem;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    transition: transform 0.2s;
-  }
-
-  /* Hover effect for linked photo - ensures it works on the <a> wrapper */
-  a:hover .member-photo {
-    transform: scale(1.05);
-    cursor: pointer;
-  }
-
-  .member-name {
-    margin-top: 0;
-    margin-bottom: 0.25rem;
-    font-size: 1.25rem;
-    font-weight: 700;
-      text-align: center;
-  }
-
-  /* Link Styles */
-  .member-link {
-    text-decoration: none;
-    color: inherit;
-  }
-  .member-link:hover {
-    text-decoration: underline;
-    color: #0056b3;
-  }
-
-  .member-details {
-    font-size: 0.9rem;
-    color: #666;
-    line-height: 1.4;
-  }
-
-  /* Right Column (Bio Text) */
-  .member-biography {
-    flex: 1;
-    text-align: justify;
-  }
-
-  /* Mobile Responsiveness */
-  @media (max-width: 768px) {
-    .member-bio-container {
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-    }
-
-    .member-biography {
-      text-align: left;
-    }
-  }
-</style>
+{% if m.role == "professor" %}
+  {% include member-pi.html member=m %}
+{% else %}
+  {% include member-card.html member=m %}
+{% endif %}

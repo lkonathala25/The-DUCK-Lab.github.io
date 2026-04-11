@@ -1,35 +1,75 @@
 ---
 ---
 
-// colors
+// ----------------------------------------------------------------
+// DUCK Lab · Sunlit design tokens
+// ----------------------------------------------------------------
+// NOTE: `_plugins/misc.rb::google_fonts` reads this file literally
+// via regex to build the Google Fonts URL. The two critical patterns
+// are:
+//   names:   `--\S*:\s*"(.*)",?.*;`   (quoted font family per token)
+//   weights: `--\S*:\s(\d{3});`       (numeric weight tokens)
+// Keep the quoting and weight tokens below intact or font loading
+// will silently break.
+// ----------------------------------------------------------------
+
 [data-dark="false"] {
-  --primary: #0795d9;
-  --secondary: #7dd3fc;
-  --text: #000000;
-  --background: #ffffff;
-  --background-alt: #fafafa;
-  --light-gray: #e0e0e0;
-  --gray: #808080;
-  --dark-gray: #404040;
-  --overlay: #00000020;
+  // sunlit palette
+  --bg: #fbf6ed;
+  --bg-alt: #f4ead4;
+  --surface: #ffffff;
+  --ink: #1a1d3a;
+  --ink-soft: #4c5175;
+  --ink-mute: #7a7f9e;
+  --primary: #1e2a5e;
+  --primary-dark: #0f1635;
+  --accent: #e85d3e;
+  --accent-soft: #fcd9c8;
+  --secondary: #f5b700;
+  --border: #ebe0c3;
+
+  // legacy aliases (kept so any un-migrated component still resolves)
+  --background: var(--bg);
+  --background-alt: var(--bg-alt);
+  --text: var(--ink);
+  --light-gray: var(--border);
+  --gray: var(--ink-mute);
+  --dark-gray: var(--ink-soft);
+  --overlay: #1a1d3a12;
 }
+
 [data-dark="true"] {
-  --primary: #0795d9;
-  --secondary: #075985;
-  --text: #ffffff;
-  --background: #181818;
-  --background-alt: #1c1c1c;
-  --light-gray: #404040;
-  --gray: #808080;
-  --dark-gray: #b0b0b0;
-  --overlay: #ffffff10;
+  // dark palette deferred — mirror light so a stray toggle does not crash
+  --bg: #fbf6ed;
+  --bg-alt: #f4ead4;
+  --surface: #ffffff;
+  --ink: #1a1d3a;
+  --ink-soft: #4c5175;
+  --ink-mute: #7a7f9e;
+  --primary: #1e2a5e;
+  --primary-dark: #0f1635;
+  --accent: #e85d3e;
+  --accent-soft: #fcd9c8;
+  --secondary: #f5b700;
+  --border: #ebe0c3;
+
+  --background: var(--bg);
+  --background-alt: var(--bg-alt);
+  --text: var(--ink);
+  --light-gray: var(--border);
+  --gray: var(--ink-mute);
+  --dark-gray: var(--ink-soft);
+  --overlay: #1a1d3a12;
 }
 
 :root {
-  // font families
-  --title: "Barlow", sans-serif;
-  --heading: "Barlow", sans-serif;
-  --body: "Barlow", sans-serif;
+  // font families — quoted names are picked up by the google_fonts filter
+  --serif: "Instrument Serif", serif;
+  --sans: "Inter", sans-serif;
+  // legacy aliases for un-migrated components
+  --title: "Instrument Serif", serif;
+  --heading: "Instrument Serif", serif;
+  --body: "Inter", sans-serif;
   --code: "Roboto Mono", monospace;
 
   // font sizes
@@ -37,18 +77,20 @@
   --xl: 1.4rem;
   --xxl: 1.6rem;
 
-  // font weights
-  --thin: 200;
+  // font weights — the google_fonts filter pulls these weights for every family
+  --thin: 400;
   --regular: 400;
   --semi-bold: 500;
   --bold: 600;
+  --black: 700;
 
   // text line spacing
-  --spacing: 2;
-  --compact: 1.5;
+  --spacing: 1.65;
+  --compact: 1.45;
 
   // effects
-  --rounded: 3px;
-  --shadow: 0 0 10px 0 var(--overlay);
-  --transition: 0.2s ease;
+  --rounded: 6px;
+  --shadow: 0 10px 40px -12px rgba(26, 29, 58, 0.25);
+  --shadow-lg: 0 40px 80px -30px rgba(26, 29, 58, 0.35);
+  --transition: 0.3s ease;
 }

@@ -3,6 +3,7 @@ name: "Mihaela Catalina<br>Stoian"
 image: images/mihaela.png
 description: Research Associate
 role: postdoc
+order: 30
 homepage: https://mihaela-stoian.github.io/
 links:
   email: mstoian@ic.ac.uk

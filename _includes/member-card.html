@@ -1,0 +1,32 @@
+{% comment %}
+  Compact team card — 4:5 photo with gradient overlay and name/role on hover.
+  Accepts `lookup` (slug), `member` (full object), or falls back to include params.
+{% endcomment %}
+{% if include.lookup %}
+  {% assign member = site.members | where_exp: "m", "m.slug == include.lookup" | first %}
+{% elsif include.member %}
+  {% assign member = include.member %}
+{% else %}
+  {% assign member = include %}
+{% endif %}
+
+{% assign click_url = nil %}
+{% if member.url and page.slug != member.slug %}
+  {% assign click_url = member.url | relative_url | uri_escape %}
+{% endif %}
+
+{% capture card %}
+<article class="person">
+  <img src="{{ member.image | relative_url | uri_escape }}" alt="{{ member.name | strip_html }}">
+  <div class="person-overlay">
+    <div class="person-name">{{ member.name }}</div>
+    <div class="person-role">{{ member.description | strip_html }}</div>
+  </div>
+</article>
+{% endcapture %}
+
+{% if click_url %}
+  <a href="{{ click_url }}" class="person-link" aria-label="{{ member.name | strip_html }}">{{ card }}</a>
+{% else %}
+  {{ card }}
+{% endif %}

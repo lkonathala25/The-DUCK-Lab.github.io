@@ -1,0 +1,45 @@
+---
+---
+
+.not-found {
+  max-width: 640px;
+  margin: 120px auto;
+  text-align: center;
+}
+
+.not-found-code {
+  font-family: var(--serif);
+  font-size: clamp(5rem, 12vw, 10rem);
+  font-weight: 400;
+  color: var(--accent);
+  line-height: 1;
+  font-style: italic;
+  margin-bottom: 16px;
+}
+
+.not-found-title {
+  font-family: var(--serif);
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  font-weight: 400;
+  color: var(--ink);
+  margin: 0 0 16px 0;
+}
+
+.not-found-title em {
+  color: var(--accent);
+  font-style: italic;
+}
+
+.not-found-desc {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--ink-soft);
+  margin-bottom: 32px;
+}
+
+.not-found .cta-row {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}

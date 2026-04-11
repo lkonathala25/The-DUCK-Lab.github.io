@@ -1,0 +1,57 @@
+{% comment %}
+  PI row — big photo left, serif name + bio right.
+  Accepts `lookup` (slug), `member` (full object), or falls back to include params.
+{% endcomment %}
+{% if include.lookup %}
+  {% assign member = site.members | where_exp: "m", "m.slug == include.lookup" | first %}
+{% elsif include.member %}
+  {% assign member = include.member %}
+{% else %}
+  {% assign member = include %}
+{% endif %}
+
+{% assign click_url = nil %}
+{% if member.url and page.slug != member.slug %}
+  {% assign click_url = member.url | relative_url | uri_escape %}
+{% endif %}
+
+<div class="pi-row">
+  <div class="pi-photo">
+    {% if click_url %}<a href="{{ click_url }}" aria-label="{{ member.name | strip_html }}">{% endif %}
+      <img src="{{ member.image | relative_url | uri_escape }}" alt="{{ member.name | strip_html }}">
+    {% if click_url %}</a>{% endif %}
+  </div>
+
+  <div class="pi-body">
+    <div class="pi-role">{{ member.description | default: "Principal Investigator" }}</div>
+
+    <h2 class="pi-name">
+      {% assign parts = member.name | strip_html | split: " " %}
+      {% if parts.size >= 2 %}
+        <em>{{ parts[0] }}</em><br>{% for part in parts offset: 1 %}{{ part }} {% endfor %}
+      {% else %}
+        {{ member.name }}
+      {% endif %}
+    </h2>
+
+    <div class="pi-bio">
+      {% if member.content %}
+        {{ member.content | markdownify | remove: "<p>" | remove: "</p>" }}
+      {% endif %}
+    </div>
+
+    <div class="pi-links">
+      {% for link in member.links %}
+        {% assign key = link[0] %}
+        {% assign value = link[1] %}
+        {% if value and value != "" %}
+          {% include button.html type=key link=value style="bare" %}
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    {% if click_url %}
+      <a href="{{ click_url }}" class="btn btn-primary">View profile</a>
+    {% endif %}
+  </div>
+</div>

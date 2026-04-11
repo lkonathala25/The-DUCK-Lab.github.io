@@ -1,0 +1,176 @@
+---
+---
+
+.hero {
+  padding: 70px 0 60px;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 64px;
+  align-items: start;
+}
+
+// ----------------------------------------------------------------
+// DUCK Lab mega lockup
+// ----------------------------------------------------------------
+.mega-lockup {
+  display: flex;
+  align-items: flex-end;
+  gap: 20px;
+  margin-top: 10px;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+  overflow: visible;
+}
+
+.mega-duck {
+  font-family: var(--serif);
+  font-size: clamp(5.5rem, 13vw, 12rem);
+  line-height: 1;
+  color: var(--ink);
+  font-weight: 400;
+  display: flex;
+  align-items: flex-end;
+  padding-top: 0;
+  overflow: visible;
+}
+
+// Every letter gets generous top-padding so its padding-box (and therefore
+// the compositing layer created by `transition: transform`) is larger than
+// the glyph ink. Italic letters get extra right-padding for the same reason.
+.mega-duck .l {
+  display: inline-block;
+  transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), color var(--transition);
+  cursor: default;
+  padding: 0.3em 0.08em 0 0.03em;
+  overflow: visible;
+}
+
+.mega-duck .u { color: var(--accent); font-style: italic; padding-right: 0.14em; }
+.mega-duck .c { color: var(--primary); }
+.mega-duck .k { color: var(--secondary); font-style: italic; padding-right: 0.2em; }
+.mega-duck .l:hover { transform: translateY(-10px); }
+
+.mega-lab {
+  font-family: var(--serif);
+  font-size: clamp(2.2rem, 5vw, 4.2rem);
+  font-style: italic;
+  color: var(--accent);
+  line-height: 1;
+  padding-bottom: 14px;
+}
+
+// ----------------------------------------------------------------
+// DUCK acronym legend
+// ----------------------------------------------------------------
+.duck-legend {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 22px 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  max-width: 780px;
+  margin-bottom: 40px;
+}
+
+.duck-legend > div {
+  font-size: 0.82rem;
+  padding: 10px 14px;
+  border-radius: 6px;
+  transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+}
+
+.duck-legend b {
+  display: block;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.25rem;
+  color: var(--primary);
+  margin-bottom: 2px;
+  font-weight: 400;
+  transition: color var(--transition);
+}
+
+.duck-legend span {
+  color: var(--ink-soft);
+  letter-spacing: 0.02em;
+}
+
+// letter ⇄ legend linked hover (requires :has())
+.hero-grid:has(.mega-duck .d:hover) .duck-legend .leg-d,
+.hero-grid:has(.mega-duck .u:hover) .duck-legend .leg-u,
+.hero-grid:has(.mega-duck .c:hover) .duck-legend .leg-c,
+.hero-grid:has(.mega-duck .k:hover) .duck-legend .leg-k,
+.duck-legend > div:hover {
+  background: var(--accent-soft);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px -14px rgba(232, 93, 62, 0.5);
+}
+
+.hero-grid:has(.mega-duck .d:hover) .duck-legend .leg-d b,
+.hero-grid:has(.mega-duck .u:hover) .duck-legend .leg-u b,
+.hero-grid:has(.mega-duck .c:hover) .duck-legend .leg-c b,
+.hero-grid:has(.mega-duck .k:hover) .duck-legend .leg-k b,
+.duck-legend > div:hover b {
+  color: var(--accent);
+}
+
+// ----------------------------------------------------------------
+// Lede + CTAs
+// ----------------------------------------------------------------
+.lede {
+  font-family: var(--serif);
+  font-size: 1.55rem;
+  line-height: 1.45;
+  color: var(--ink-soft);
+  max-width: 720px;
+  margin: 0 0 36px 0;
+}
+
+.lede em {
+  color: var(--accent);
+  font-style: italic;
+}
+
+.cta-row {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+// ----------------------------------------------------------------
+// Hero photo
+// ----------------------------------------------------------------
+.hero-aside {
+  position: relative;
+  padding-top: 60px;
+}
+
+.hero-photo {
+  overflow: hidden;
+  border-radius: 6px;
+  box-shadow: var(--shadow-lg);
+  background: var(--bg-alt);
+}
+
+.hero-photo img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 900px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .hero-aside {
+    padding-top: 0;
+  }
+  .duck-legend {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

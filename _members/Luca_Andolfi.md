@@ -3,6 +3,7 @@ name: Luca Andolfi
 image: images/luca.jpeg
 description: Research Fellow
 role: fellow
+order: 20
 homepage:  
 links:
   email:  

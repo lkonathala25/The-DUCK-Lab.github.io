@@ -1,5 +1,8 @@
 /*
   manages light/dark mode.
+  NOTE: dark mode is deferred — the toggle UI has been removed from the footer.
+  this script null-checks the toggle so it can be re-enabled later without
+  changing anything here.
 */
 
 {
@@ -8,9 +11,9 @@
     window.localStorage.getItem("dark-mode") ?? "false";
 
   const onLoad = () => {
-    // update toggle button to match loaded mode
-    document.querySelector(".dark-toggle").checked =
-      document.documentElement.dataset.dark === "true";
+    // update toggle button to match loaded mode — if the toggle exists
+    const toggle = document.querySelector(".dark-toggle");
+    if (toggle) toggle.checked = document.documentElement.dataset.dark === "true";
   };
 
   // after page loads

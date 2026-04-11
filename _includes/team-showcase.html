@@ -1,0 +1,85 @@
+{% comment %}
+  Interactive team showcase — one "featured" panel at a time + thumbnail strip.
+  All panels are rendered into the same grid cell and cross-faded via JS.
+  Defaults to the first member by `order` (typically the PI).
+{% endcomment %}
+
+{% assign sorted = site.members | sort: "order" %}
+{% assign default_member = sorted | first %}
+
+<div class="team-showcase" data-active="{{ default_member.slug }}">
+  <div class="team-featured-stack">
+    {% for member in sorted %}
+      {% assign is_active = false %}
+      {% if member.slug == default_member.slug %}{% assign is_active = true %}{% endif %}
+
+      <article
+        class="team-panel{% if is_active %} is-active{% endif %}"
+        id="panel-{{ member.slug }}"
+        role="tabpanel"
+        aria-labelledby="thumb-{{ member.slug }}"
+        data-member="{{ member.slug }}"
+        {% unless is_active %}aria-hidden="true"{% endunless %}
+      >
+        <div class="team-panel-photo">
+          <img src="{{ member.image | relative_url | uri_escape }}" alt="{{ member.name | strip_html }}">
+        </div>
+
+        <div class="team-panel-body">
+          <div class="team-panel-role">{{ member.description }}</div>
+
+          <h3 class="team-panel-name">
+            {% assign parts = member.name | strip_html | split: " " %}
+            {% if parts.size >= 2 %}
+              <em>{{ parts[0] }}</em><br>{% for part in parts offset: 1 %}{{ part }} {% endfor %}
+            {% else %}
+              {{ member.name }}
+            {% endif %}
+          </h3>
+
+          <div class="team-panel-bio">
+            {{ member.content | markdownify | remove: "<p>" | remove: "</p>" }}
+          </div>
+
+          <div class="team-panel-links">
+            {% for link in member.links %}
+              {% assign key = link[0] %}
+              {% assign value = link[1] %}
+              {% if value and value != "" %}
+                {% include button.html type=key link=value style="bare" %}
+              {% endif %}
+            {% endfor %}
+          </div>
+
+          {% if member.url %}
+            <a href="{{ member.url | relative_url | uri_escape }}" class="btn btn-primary">View full profile</a>
+          {% endif %}
+        </div>
+      </article>
+    {% endfor %}
+  </div>
+
+  <div class="team-thumbs" role="tablist" aria-label="Team members">
+    {% for member in sorted %}
+      {% assign is_active = false %}
+      {% if member.slug == default_member.slug %}{% assign is_active = true %}{% endif %}
+
+      <button
+        type="button"
+        id="thumb-{{ member.slug }}"
+        class="team-thumb{% if is_active %} is-active{% endif %}"
+        role="tab"
+        data-target="{{ member.slug }}"
+        aria-controls="panel-{{ member.slug }}"
+        aria-selected="{% if is_active %}true{% else %}false{% endif %}"
+        tabindex="{% if is_active %}0{% else %}-1{% endif %}"
+      >
+        <img src="{{ member.image | relative_url | uri_escape }}" alt="{{ member.name | strip_html }}">
+        <span class="team-thumb-overlay">
+          <span class="team-thumb-name">{{ member.name | strip_html }}</span>
+          <span class="team-thumb-role">{{ member.description | strip_html }}</span>
+        </span>
+      </button>
+    {% endfor %}
+  </div>
+</div>

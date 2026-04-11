@@ -1,32 +1,48 @@
 ---
 title: Projects
+layout: home
 nav:
   order: 2
   tooltip: Software, datasets, and more
 ---
 
-# {% include icon.html icon="fa-solid fa-box-open" %}Projects
+<section>
+  <div class="container">
+    <div class="section-head">
+      <h1 class="section-title">Our <em>projects</em></h1>
+      <span class="section-meta">Software, datasets, and tools</span>
+    </div>
 
-{% comment %}
-
-# {% include icon.html icon="fa-solid fa-wrench" %}Projects
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-
-{% include tags.html tags="publication, resource, website" %}
-
-{% include search-info.html %}
-
-{% include section.html %}
-
-{% include list.html component="card" data="projects" filter="group == 'featured'" %}
-
-{% include section.html %}
-
- 
-{% include list.html component="card" data="projects" filter="!group" style="small" %}
-{% endcomment %}
-
-
-{% include list.html component="card" data="projects" filter="group == 'featured'" %}
+    <div class="projects">
+      {% for project in site.data.projects %}
+        <article class="project-card">
+          <div class="project-img">
+            {% if project.image %}
+              <img src="{{ project.image | relative_url }}" alt="{{ project.title }}">
+            {% endif %}
+          </div>
+          <div class="project-body">
+            {% if project.tags %}
+              <div class="project-tags">
+                {% for tag in project.tags %}<span class="tag">{{ tag }}</span>{% endfor %}
+              </div>
+            {% endif %}
+            <h3 class="project-title">{{ project.title }}</h3>
+            {% if project.subtitle %}
+              <div class="project-subtitle">{{ project.subtitle }}</div>
+            {% endif %}
+            <p class="project-desc">{{ project.description }}</p>
+            <div class="project-actions">
+              {% if project.link %}
+                <a href="{{ project.link }}" class="project-link" target="_blank" rel="noopener">Read more</a>
+              {% endif %}
+              {% if project.repo %}
+                <a href="https://github.com/{{ project.repo }}" class="project-link" target="_blank" rel="noopener">GitHub</a>
+              {% endif %}
+            </div>
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
