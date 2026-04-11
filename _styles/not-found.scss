@@ -1,28 +1,61 @@
 ---
 ---
 
+// ----------------------------------------------------------------
+// 404 — DUCK-themed "not found" diagnostic
+// Visually echoes the homepage hero: large serif lockup with
+// letter-wise colour, plus a 4-column diagnostic that mirrors
+// the .duck-legend grid.
+// ----------------------------------------------------------------
+
+.not-found-section {
+  padding: 60px 0 80px;
+}
+
 .not-found {
-  max-width: 640px;
-  margin: 120px auto;
+  max-width: 820px;
+  margin: 40px auto;
   text-align: center;
 }
 
+// ----- big "404" lockup -----------------------------------------
 .not-found-code {
   font-family: var(--serif);
-  font-size: clamp(5rem, 12vw, 10rem);
+  font-size: clamp(6rem, 15vw, 13rem);
   font-weight: 400;
-  color: var(--accent);
-  line-height: 1;
-  font-style: italic;
-  margin-bottom: 16px;
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  margin-bottom: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 0.04em;
+  overflow: visible;
 }
 
+.not-found-code .nf-digit {
+  display: inline-block;
+  padding: 0.3em 0.05em 0 0.03em;
+  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), color var(--transition);
+  overflow: visible;
+}
+
+.not-found-code .nf-4   { color: var(--ink); }
+.not-found-code .nf-0   { color: var(--accent);    font-style: italic; padding-right: 0.12em; }
+.not-found-code .nf-4-b { color: var(--secondary); font-style: italic; padding-right: 0.18em; }
+
+.not-found-code:hover .nf-4   { transform: translateY(-10px); }
+.not-found-code:hover .nf-0   { transform: translateY(-16px) rotate(-4deg); }
+.not-found-code:hover .nf-4-b { transform: translateY(-10px); }
+
+// ----- headline + description -----------------------------------
 .not-found-title {
   font-family: var(--serif);
   font-size: clamp(2.2rem, 4vw, 3.2rem);
   font-weight: 400;
   color: var(--ink);
-  margin: 0 0 16px 0;
+  margin: 0 0 20px 0;
+  line-height: 1.15;
 }
 
 .not-found-title em {
@@ -34,12 +67,76 @@
   font-size: 1.05rem;
   line-height: 1.7;
   color: var(--ink-soft);
-  margin-bottom: 32px;
+  max-width: 580px;
+  margin: 0 auto 40px;
 }
 
+// ----- DUCK diagnostic grid -------------------------------------
+// Echoes .duck-legend on the homepage but with its own class
+// so the two can evolve independently.
+.nf-diagnostic {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  padding: 24px 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  margin: 0 auto 40px;
+  text-align: left;
+}
+
+.nf-diag-item {
+  font-size: 0.85rem;
+  padding: 12px 14px;
+  border-radius: 6px;
+  transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+}
+
+.nf-diag-item b {
+  display: block;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.25rem;
+  color: var(--primary);
+  margin-bottom: 4px;
+  font-weight: 400;
+  transition: color var(--transition);
+  letter-spacing: 0.01em;
+}
+
+.nf-diag-item span {
+  color: var(--ink-soft);
+  line-height: 1.55;
+}
+
+.nf-diag-item span em {
+  color: var(--accent);
+  font-style: italic;
+  font-weight: 500;
+}
+
+.nf-diag-item:hover {
+  background: var(--accent-soft);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px -14px rgba(232, 93, 62, 0.5);
+}
+
+.nf-diag-item:hover b {
+  color: var(--accent);
+}
+
+// ----- CTAs ------------------------------------------------------
 .not-found .cta-row {
   display: flex;
   gap: 16px;
   justify-content: center;
   flex-wrap: wrap;
+}
+
+// ----- responsive ------------------------------------------------
+@media (max-width: 760px) {
+  .nf-diagnostic {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
 }
