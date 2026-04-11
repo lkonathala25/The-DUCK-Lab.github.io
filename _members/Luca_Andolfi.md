@@ -1,6 +1,6 @@
 ---
 name: Luca Andolfi
-image: images/photo.jpg
+image: images/luca.jpeg
 description: Research Fellow
 role: fellow
 homepage:  
