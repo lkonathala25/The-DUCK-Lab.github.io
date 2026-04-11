@@ -1,6 +1,6 @@
 ---
 name: Eleonora Giunchiglia
-image: images/photo.jpg
+image: images/eleonora.jpg
 role: professor
 #affiliation: Imperial
 description: "Assistant Professor<br>Principal Investigator of DUCK LAB"
