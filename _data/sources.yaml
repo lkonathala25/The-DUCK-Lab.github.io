@@ -72,6 +72,12 @@
       link: https://github.com/salijona/C-AdvDGM
 
 
+- id: doi:10.1007/978-3-031-71167-1_12
+  type: paper
+  publisher: "NeSy (Spotlight)"
+  description: "We introduce ULLER, a unified language for learning and reasoning that standardises how background knowledge is expressed across neuro-symbolic AI frameworks. ULLER provides first-order logic syntax with multiple semantic interpretations."
+
+
 - id: doi:10.48550/arXiv.2402.18285
   type: paper
   image: /images/research/pishield_demo.png
