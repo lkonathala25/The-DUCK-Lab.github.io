@@ -6,6 +6,10 @@
   title: Survey published in TMLR
   description: "Our survey [A Survey on Deep Learning Approaches for Tabular Data Generation](https://doi.org/hbg52m) has been published in Transactions on Machine Learning Research (TMLR)."
 
+- date: 07-2025
+  title: Paper published at ECAI 2025
+  description: "Dr. Giunchiglia's paper [A Posteriori Verification or a Priori Design? Navigating Requirements-Driven Deep Learning](https://ebooks.iospress.nl/doi/10.3233/FAIA250782) has been published at ECAI 2025."
+
 - date: 08-2025
   title: AI for Math Fund
   subtitle: "Constraining LLMs for Theorem Proving: A Neurosymbolic Approach to Guaranteed Autoformalization"
