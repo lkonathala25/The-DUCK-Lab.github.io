@@ -147,6 +147,23 @@
     link: https://github.com/salijona/C-AdvDGM
   plugin: sources.py
   file: sources.yaml
+- id: doi:10.1016/j.ijar.2024.109124
+  title: 'CCN+: A neuro-symbolic framework for deep learning with requirements'
+  authors:
+  - Eleonora Giunchiglia
+  - Alex Tatomir
+  - "Mihaela C\u0103t\u0103lina Stoian"
+  - Thomas Lukasiewicz
+  publisher: "International Journal of Approximate Reasoning"
+  date: '2024-08-01'
+  link: https://www.sciencedirect.com/science/article/pii/S0888613X24000112
+  type: paper
+  description: "We present CCN+, a neuro-symbolic framework that integrates logical\
+    \ requirements directly into neural network outputs using inference rules to ensure\
+    \ compliance, and adapts the standard binary cross-entropy loss for constraint\
+    \ satisfaction in deep learning."
+  plugin: sources.py
+  file: sources.yaml
 - id: doi:10.1007/978-3-031-71167-1_12
   title: "ULLER: A Unified Language for\_Learning and\_Reasoning"
   authors:

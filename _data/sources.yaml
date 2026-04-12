@@ -72,6 +72,12 @@
       link: https://github.com/salijona/C-AdvDGM
 
 
+- id: doi:10.1016/j.ijar.2024.109124
+  type: paper
+  publisher: "International Journal of Approximate Reasoning"
+  description: "We present CCN+, a neuro-symbolic framework that integrates logical requirements directly into neural network outputs using inference rules to ensure compliance, and adapts the standard binary cross-entropy loss for constraint satisfaction in deep learning."
+
+
 - id: doi:10.1007/978-3-031-71167-1_12
   type: paper
   image: /images/research/ULLER.png
