@@ -42,18 +42,18 @@
   plugin: sources.py
   file: sources.yaml
 - id: doi:10.3233/FAIA250782
-  title: 'A Posteriori Verification or a Priori Design? Navigating Requirements-Driven
-    Deep Learning'
+  title: A Posteriori Verification or a Priori Design? Navigating Requirements-Driven
+    Deep Learning
   authors:
   - Eleonora Giunchiglia
   publisher: ECAI
   date: '2025-07-10'
-  link: https://ebooks.iospress.nl/doi/10.3233/FAIA250782
+  link: https://doi.org/hbwt5t
   type: paper
-  description: "We contrast two approaches to ensuring machine learning systems satisfy\
-    \ formal requirements in safety-critical settings: integrating requirements directly\
-    \ into model architecture and training (a priori design) versus analyzing trained\
-    \ models for desired properties (a posteriori verification)."
+  description: 'We contrast two approaches to ensuring machine learning systems satisfy
+    formal requirements in safety-critical settings: integrating requirements directly
+    into model architecture and training (a priori design) versus analyzing trained
+    models for desired properties (a posteriori verification).'
   plugin: sources.py
   file: sources.yaml
 - id: doi:10.48550/arXiv.2508.21787
