@@ -112,18 +112,29 @@
   gap: 20px;
 }
 
+.member-paper-list li {
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+.member-paper-list li:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
 .citation-compact {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 5px;
 }
 
 .citation-compact-title {
-  font-size: 0.98rem;
-  font-weight: 600;
-  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  font-weight: 400;
+  color: var(--primary);
   text-decoration: none;
-  line-height: 1.4;
+  line-height: 1.35;
   transition: color var(--transition);
 }
 
@@ -132,11 +143,11 @@
 }
 
 .citation-compact-meta {
-  font-size: 0.83rem;
-  color: var(--ink-soft);
+  font-size: 0.78rem;
+  color: var(--ink-mute);
   display: flex;
   flex-wrap: wrap;
-  gap: 4px;
+  gap: 5px;
   align-items: center;
   line-height: 1.4;
 }
@@ -146,8 +157,9 @@
 }
 
 .citation-compact-venue {
-  font-weight: 600;
+  font-style: italic;
   color: var(--accent);
+  font-weight: 500;
 }
 
 .member-news-item {
