@@ -45,7 +45,7 @@ layout: home
 {% assign cite_name = page.scholar_name %}
 {% assign member_papers = site.data.citations | where_exp: "paper", "paper.authors contains cite_name" | sort: "date" | reverse %}
 {% if member_papers.size > 0 %}
-<section>
+<section class="member-papers-section">
   <div class="container">
     <div class="section-head">
       <h2 class="section-title">Papers</h2>

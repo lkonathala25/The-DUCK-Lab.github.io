@@ -80,6 +80,10 @@
   border-bottom-color: var(--accent);
 }
 
+.member-papers-section {
+  padding-top: 20px;
+}
+
 @media (max-width: 900px) {
   .member-page {
     grid-template-columns: 1fr;
