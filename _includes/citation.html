@@ -8,6 +8,30 @@
   {% assign citation = include %}
 {% endif %}
 
+{% if include.style == "compact" %}
+<div class="citation-compact">
+  <a
+    {% if citation.link %}href="{{ citation.link | relative_url | xml_escape }}"{% endif %}
+    class="citation-compact-title"
+  >{{ citation.title | default: "[no title]" }}</a>
+  <div class="citation-compact-meta">
+    <span class="citation-compact-authors">{{
+      citation.authors
+      | join: ","
+      | split: ","
+      | array_carve: 5
+      | join: ", "
+      | markdownify
+      | remove: "<p>" | remove: "</p>"
+      | default: "[no author info]"
+    }}</span>
+    <span class="citation-compact-sep">&middot;</span>
+    <span class="citation-compact-venue">{{ citation.publisher | default: "[no venue]" }}</span>
+    <span class="citation-compact-sep">&middot;</span>
+    <span class="citation-compact-year">{{ citation.date | date: "%Y" | default: "[no date]" }}</span>
+  </div>
+</div>
+{% else %}
 <div class="citation-container">
   <div class="citation">
     {% if include.style == "rich" %}
@@ -111,3 +135,4 @@
     </div>
   </div>
 </div>
+{% endif %}
