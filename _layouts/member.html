@@ -42,7 +42,7 @@ layout: home
   </div>
 </section>
 
-{% assign cite_name = page.scholar_name | default: page.name | strip_html | strip %}
+{% assign cite_name = page.scholar_name %}
 {% assign member_papers = site.data.citations | where_exp: "paper", "paper.authors contains cite_name" | sort: "date" | reverse %}
 {% if member_papers.size > 0 %}
 <section>
