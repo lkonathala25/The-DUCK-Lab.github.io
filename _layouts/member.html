@@ -65,7 +65,7 @@ layout: home
     {% assign member_news = member_news | push: item %}
   {% endif %}
 {% endfor %}
-{% assign member_news = member_news | slice: 0, 3 %}
+{% comment %}member_news already in reverse chronological order from site.data.news{% endcomment %}
 
 {% if member_papers.size > 0 or member_news.size > 0 %}
 <section class="member-papers-section">
@@ -85,7 +85,7 @@ layout: home
 
       {% if member_news.size > 0 %}
       <div class="member-sidebar-col">
-        <h2 class="member-sidebar-heading">Most recent news</h2>
+        <h2 class="member-sidebar-heading">News</h2>
         <ul class="member-news-list">
           {% for item in member_news %}
             <li class="member-news-item">
