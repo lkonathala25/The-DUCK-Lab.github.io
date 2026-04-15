@@ -43,8 +43,31 @@ layout: home
 </section>
 
 {% assign cite_name = page.scholar_name %}
+{% assign first_name = cite_name | split: " " | first %}
 {% assign member_papers = site.data.citations | where_exp: "paper", "paper.authors contains cite_name" | sort: "date" | reverse %}
-{% if member_papers.size > 0 or page.news.size > 0 %}
+
+{% assign member_news = "" | split: "" %}
+{% for item in site.data.news %}
+  {% assign matched = false %}
+  {% if item.description contains first_name or item.title contains first_name %}
+    {% assign matched = true %}
+  {% endif %}
+  {% unless matched %}
+    {% for paper in member_papers %}
+      {% unless matched %}
+        {% if item.description contains paper.link %}
+          {% assign matched = true %}
+        {% endif %}
+      {% endunless %}
+    {% endfor %}
+  {% endunless %}
+  {% if matched %}
+    {% assign member_news = member_news | push: item %}
+  {% endif %}
+{% endfor %}
+{% assign member_news = member_news | slice: 0, 3 %}
+
+{% if member_papers.size > 0 or member_news.size > 0 %}
 <section class="member-papers-section">
   <div class="container">
     <div class="member-sidebar-grid">
@@ -60,14 +83,15 @@ layout: home
       </div>
       {% endif %}
 
-      {% if page.news.size > 0 %}
+      {% if member_news.size > 0 %}
       <div class="member-sidebar-col">
-        <h2 class="member-sidebar-heading">News</h2>
+        <h2 class="member-sidebar-heading">Most recent news</h2>
         <ul class="member-news-list">
-          {% for item in page.news %}
+          {% for item in member_news %}
             <li class="member-news-item">
               <span class="member-news-date">{{ item.date }}</span>
-              <span class="member-news-text">{{ item.text | markdownify | remove: "<p>" | remove: "</p>" }}</span>
+              <span class="member-news-title">{{ item.title }}</span>
+              <span class="member-news-text">{{ item.description | markdownify | remove: "<p>" | remove: "</p>" }}</span>
             </li>
           {% endfor %}
         </ul>
